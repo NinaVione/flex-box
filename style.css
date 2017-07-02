@@ -1,0 +1,234 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation {
+  font-size: 1rem;
+  height: 8em;
+  width: 102.4em;
+  margin-top: 2em;
+}
+
+.navigation > .nav > .nav-list {
+  display: flex;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+} 
+
+.navigation > .nav > .nav-list > .nav-item {
+  font-size: 2em;
+  background-color: #a2a2a2;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  height: 2em;
+  padding: 1em;
+  line-height: 2em;
+}
+
+.navigation > .nav > .nav-list > .nav-item.logo {
+  display: flex;
+  flex-grow: 0;
+}
+
+.navigation > .nav > .nav-list > .nav-item:first-child {
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+} 
+
+.navigation > .nav > .nav-list > .nav-item:nth-child(5) {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.nav-item > .triangle {
+  font-weight: bold;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 150px 100px 0 100px;
+  border-color: #116b2c transparent transparent transparent;
+  position: relative;
+  top: -1em;
+}
+
+.nav-item > .triangle > span {
+  position: absolute;
+  top: -6.5em;
+}
+
+.box {
+  width: 42em;
+  height: 42em;
+  display: flex;
+  margin: 0.5em;
+}
+
+.main {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 178em;
+  flex-flow: row wrap;
+  margin-top: 10em;
+}
+
+.main > .content {
+  font-size: 1em;
+  background-color: #e8e8e8;
+  max-width: 128em;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1em;
+  height: 302em;
+}
+
+.main > .content > .box {
+  background-color: #fca860;
+}
+
+.main > .content > .box:nth-of-type(4n+2), .main > .content > .box:nth-of-type(4n+3) {
+  flex-grow: 2;
+}
+
+.main > .content > .box:nth-of-type(4n+1), .main > .content > .box:nth-of-type(4n+4) {
+  flex-grow: 0;
+}
+
+.main > .ads {
+  font-size: 1em;
+  background-color: #e8e8e8;
+  max-width: 46em;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  height: 302em;
+}
+
+.main > .ads > .box {
+  background-color: #f7705a;
+}
+
+.main > .ads > .box:nth-of-type(2n+2) {
+  flex-shrink: 2;
+}
+
+.main > .ads > .box:nth-of-type(2n+1) {
+  flex-shrink: 0;
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .main {
+    font-size: 0.55rem;
+    margin-top: 15em;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 1024px) {
+
+  .navigation {
+    font-size: 0.98rem;
+    margin-top: 0;
+    width: 100vw;
+  }
+
+  .main {
+    font-size: 0.56rem;
+    margin-top: 20em;
+    flex-direction: row-reverse;
+  }
+
+  .navigation > .nav > .nav-list > .nav-item:first-child, .navigation > .nav > .nav-list > .nav-item:nth-child(5){
+    border-radius: 0;
+  }
+
+  .navigation > .nav > .nav-list > .nav-item.logo {
+    order: -1;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .navigation {
+    margin-top: 0;
+    max-width: 100%;
+    margin-bottom: 8em;
+  }
+  .main {
+    font-size: 0.4rem;
+    margin-top: 0;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main > .ads {
+    max-width: 100%;
+  }
+
+  .main > .content > .box, .main > .ads > .box {
+    width: 100%;
+  }
+
+  .main > .content > .box:nth-of-type(4n+2), .main > .content > .box:nth-of-type(4n+3) {
+    flex-grow: 0;
+  }
+
+  .main > .ads > .box:nth-of-type(2n+2) {
+    flex-basis: 42em;
+  }
+
+  .navigation > .nav > .nav-list > .nav-item {
+    display: block;
+  }
+
+  .navigation > .nav > .nav-list > .nav-item.logo > .triangle {
+    border-width: 100px 80px 0 80px;
+    margin-top: 2em;
+    z-index: 1000;
+  }
+
+  .navigation > .nav > .nav-list > .nav-item.logo > .triangle > span{
+    top: -4.5em;
+  }
+
+  .navigation > .nav > .nav-list {
+    position: relative;
+  }
+
+  .navigation > .nav > .nav-list > .nav-item:first-child, .navigation > .nav > .nav-list > .nav-item:nth-child(5){
+    border-radius: 0;
+  }
+
+  .navigation > .nav > .nav-list > .nav-item:nth-child(2), .navigation > .nav > .nav-list > .nav-item:nth-child(5) {
+    top: 4em;
+    position: absolute;
+    width: 50%;
+  }
+
+  .navigation > .nav > .nav-list > .nav-item:nth-child(2) {
+    left: 0;
+  }
+
+  .navigation > .nav > .nav-list > .nav-item:nth-child(5) {
+    right: 0;
+  }
+
+  .navigation > .nav > .nav-list > .nav-item {
+    width: 100%;
+    height: 4em;
+    padding: 0;
+  }
+}
